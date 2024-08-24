@@ -22,13 +22,10 @@ func main() {
 	for i := range workQuene {
 		workQuene[i].value = rand.Int()
 	}
-
 	// Create 10 worker goroutines
 	for i := 0; i < 10; i++ {
 		go func() {
-			for {
-				// Get work from the work channel
-				work := <-workCh
+			for work := range workCh {
 				// Compute result
 				result := Result{
 					value: work.value * 2,
@@ -51,6 +48,7 @@ func main() {
 	for _, work := range workQuene {
 		workCh <- work
 	}
+	close(workCh)
 	// Wait until everything is done
 	<-done
 	fmt.Println(results)
