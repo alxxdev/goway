@@ -24,6 +24,9 @@ func main() {
     fmt.Println(price + tax)
 }
 ```
+| keyword  | name | type  | value |
+| ------------- | ------------- | ------------- | ------------- |
+| const | price | float32 | 275.00 |
 
 **untyped**
 
@@ -33,7 +36,7 @@ func main() {
     fmt.Println("Total:", quantity * (price + tax))
     ...
 ```
+| keyword  | name | value |
+| ------------- | ------------- | ------------- |
+| const | quantity | 2 |
 
-| keyword  | name | type  | value |
-| ------------- | ------------- | ------------- | ------------- |
-| const | price | float32 | 275.00 |
