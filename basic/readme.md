@@ -40,3 +40,16 @@ func main() {
 | ------------- | ------------- | ------------- |
 | const | quantity | 2 |
 
+# Using Arrays, Slices, and Maps
+
+## Getting the Array Underlying a Slice
+```go
+func main() {
+    slice := []string{"a","b","c"}
+    ptr := (*[3]string)(slice)
+    arr := *ptr
+
+    fmt.Println(arr)
+}
+```
+
